@@ -49,7 +49,7 @@ def ganho_informacao_condicional(df_dados: pd.DataFrame, val_entropia_y:float, n
     val_gi = 0
 
     #para testes:
-    #print("GI({classe}| {atr}={val}) = {val_gi}".format(classe=nom_col_classe,atr=nom_atributo,val=val_atributo,val_gi=val_gi))
+    #print(f"GI({nom_col_classe}| {nom_atributo}={val_atributo}) = {val_gi}")
 
     return val_gi
 
@@ -80,6 +80,6 @@ def ganho_informacao(df_dados:pd.DataFrame, nom_col_classe:str, nom_atributo:str
         val_prob = None
         val_info_gain += None
 
-        #print("GI("+nom_col_classe+"| "+nom_atributo+"="+val_atr+") = "+str(val_gi_val))
+        #print(f"GI({nom_col_classe}| {nom_atributo}={val_atr}) = {val_gi_val})
 
     return val_info_gain
