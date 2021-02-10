@@ -1,4 +1,5 @@
 import pandas as pd
+from typing import Union
 
 
 def entropia(df_dados:pd.DataFrame, nom_col_classe:str) -> float:
@@ -25,7 +26,7 @@ def entropia(df_dados:pd.DataFrame, nom_col_classe:str) -> float:
     return entropia
 
 
-def ganho_informacao_condicional(df_dados: pd.DataFrame, val_entropia_y:float, nom_col_classe:str, nom_atributo:str, val_atributo:float) ->float:
+def ganho_informacao_condicional(df_dados: pd.DataFrame, val_entropia_y:Union[int,float,str,bool], nom_col_classe:str, nom_atributo:str, val_atributo:float) ->float:
     """
     Calcula o GI(Y|nom_atributo=val_atributo), ou seja,
     calcula o ganho de informação do atributo 'nom_atributo' quando ele assume o valor 'val_atributo'.
@@ -36,7 +37,8 @@ def ganho_informacao_condicional(df_dados: pd.DataFrame, val_entropia_y:float, n
     val_entropia_y: Entropia(Y) (ver slides)
     nom_col_classe: nome da coluna que representa a classe
     nom_atributo: atributo a ser calculado o ganho de informação
-    val_atributo: valor do atributo a ser considerado para este calculo
+    val_atributo: valor do atributo a ser considerado para este calculo. Uso do Union na dia do tipo: 
+                  o valor pode ser qualquer tipo primitivo (boolean, int, float ou str)
     """
     #substitua os "None"/0 quando necessario para completar o código
     #.em df_dados_filtrado, filtre o df_dados da forma correta - pensando quais
