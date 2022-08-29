@@ -82,6 +82,6 @@ def ganho_informacao(df_dados:pd.DataFrame, nom_col_classe:str, nom_atributo:str
         val_prob = None
         val_info_gain += None
 
-        #print(f"GI({nom_col_classe}| {nom_atributo}={val_atr}) = {val_gi_val})
+        #print(f"GI({nom_col_classe}| {nom_atributo}={val_atr}) = {val_info_gain}")
 
     return val_info_gain
