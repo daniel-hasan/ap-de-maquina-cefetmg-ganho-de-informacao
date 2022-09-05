@@ -26,7 +26,7 @@ def entropia(df_dados:pd.DataFrame, nom_col_classe:str) -> float:
     return entropia
 
 
-def ganho_informacao_condicional(df_dados: pd.DataFrame, val_entropia_y:Union[int,float,str,bool], nom_col_classe:str, nom_atributo:str, val_atributo:float) ->float:
+def ganho_informacao_condicional(df_dados: pd.DataFrame, val_entropia_y:float, nom_col_classe:str, nom_atributo:str, val_atributo:Union[int,float,str,bool]) ->float:
     """
     Calcula o GI(Y|nom_atributo=val_atributo), ou seja,
     calcula o ganho de informação do atributo 'nom_atributo' quando ele assume o valor 'val_atributo'.
@@ -82,6 +82,6 @@ def ganho_informacao(df_dados:pd.DataFrame, nom_col_classe:str, nom_atributo:str
         val_prob = None
         val_info_gain += None
 
-        #print(f"GI({nom_col_classe}| {nom_atributo}={val_atr}) = {val_gi_val})
+        #print(f"GI({nom_col_classe}| {nom_atributo}={val_atr}) = {val_info_gain}")
 
     return val_info_gain
